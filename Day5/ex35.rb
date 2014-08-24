@@ -10,7 +10,7 @@ def gold_room
   choice = $stdin.gets.chomp
 
   # This line has a bug. At first, it did not use parentheses or spaces. I'm not entirely sure of what's going wrong, but I did fix it.
-  if choice.include?("0") || choice.include?("1")
+  if choice =~ /[0-9]/
     how_much = choice.to_i
   else
     dead("Man, learn to type a number.")
