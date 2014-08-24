@@ -1,5 +1,7 @@
 # Designing and Debugging
 
+# This game is currently a disaster. In process of a rework.
+
 puts "Alrighty then, let's play a game."
 
 def game
@@ -36,7 +38,7 @@ def game
   end
 
   middle
-  
+
 end
 
 game
