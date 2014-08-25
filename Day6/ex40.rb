@@ -6,6 +6,8 @@ class Song
     @lyrics = lyrics
   end
 
+  # The @ symbol tells Ruby where to look for the function.
+
   def sing_me_a_song()
     @lyrics.each {|line| puts line}
   end
