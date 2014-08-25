@@ -31,7 +31,7 @@ puts "Florida's abbreviation is: #{Dict.get(states, 'Florida')}"
 # Do it by using the state then the cities dict
 puts '_' * 10
 puts "Michigan has: #{Dict.get(cities, Dict.get(states, 'Michigan'))}"
-puts "Florida has: #{Dict.get(citites, Dict.get(states, 'Florida'))}"
+puts "Florida has: #{Dict.get(cities, Dict.get(states, 'Florida'))}"
 
 # Puts out every state abbreviation
 puts '_' * 10
@@ -39,7 +39,7 @@ Dict.list(states)
 
 # Puts out every city in every state
 puts '_' * 10
-Dict.list(citites)
+Dict.list(cities)
 
 puts '_' * 10
 # By default, Ruby says "nil" when something isn't there.
