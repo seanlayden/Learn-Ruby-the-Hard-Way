@@ -15,7 +15,7 @@ PHRASES = {
   "*** = ###.new()" =>
       "Set *** to an instance of class ###.",
   "***.***(@@@)" =>
-      "From *** get the *** function, and it with parameters @@@.",
+      "From *** get the *** function, and call it with parameters @@@.",
   "***.*** = '***'" =>
       "From *** get the *** attribute and set it to '***'."
 }
@@ -55,7 +55,7 @@ def convert(snippet, phrase)
 
   [snippet, phrase].each do |sentence|
     # Fake class names, also copies sentence
-    result = sentence.gsub(/###/) {|x| other_names.pop }
+    result = sentence.gsub(/###/) {|x| class_names.pop }
 
     # Fake other names
     result.gsub!(/\*\*\*/) {|x| other_names.pop }
