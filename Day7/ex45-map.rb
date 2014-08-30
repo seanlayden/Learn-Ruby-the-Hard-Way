@@ -46,7 +46,7 @@ class GreatRoom < Scene
 
   def enter()
     puts "\"How about these parties?\" The voice came from your left. Before you is a"
-    puts "woman in a red dress, holding a glass of champagne and sparkling with jewelery."
+    puts "woman in a red dress - whom you immediately identified as Ms. Scarlett - holding a glass of champagne and sparkling with jewelery."
     puts "How do you respond?"
     puts "a) There's nothing wrong with a free drink and good company."
     puts "b) If Mr. Cooper wasn't my boss, I wouldn't be here."
@@ -56,17 +56,17 @@ class GreatRoom < Scene
     response1 = $stdin.gets.chomp
 
     if response1 == 'a'
-      puts "The woman looks at you, and replies \"That's a good point, and Mr. Cooper doesn't skimp on the refreshments."
+      puts "She looks at you, and replies \"That's a good point, and Mr. Cooper doesn't skimp on the refreshments. \n"
       speech()
       return 'study'
 
     elsif response1 == 'b'
-      puts "The woman looks at you inquisitively, then turns her gaze to the staircase where Mr. Cooper had appeared."
+      puts "She looks at you inquisitively, then turns her gaze to the staircase where Mr. Cooper had appeared. \n"
       speech()
 
     elsif response1 == 'c'
-      puts "The woman smiles, and replies \"Stay awhile, and enjoy the amusements.\""
-      puts "I'm sure that you will find yourself quite entertained."
+      puts "She smiles, and replies \"Stay awhile, and enjoy the amusements.\""
+      puts "I'm sure that you will find yourself quite entertained. \n"
       speech()
 
     else
@@ -146,6 +146,6 @@ class Map
   end
 end
 
-a_map = Map.new('great_room')
-a_game = Engine.new(a_map)
-a_game.play()
+# a_map = Map.new('great_room')
+# a_game = Engine.new(a_map)
+# a_game.play()
