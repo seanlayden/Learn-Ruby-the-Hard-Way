@@ -13,7 +13,7 @@ class Engine
   end
 
   def play()
-    current_scene = @scene_map.opening_scene.enter()
+    current_scene = @scene_map.opening_scene
     loop do
       next_scene_name = current_scene.enter()
       current_scene = @scene_map.next_scene(next_scene_name)
@@ -35,15 +35,57 @@ class Death < Scene
   end
 end
 
+class GreatRoom < Scene
+  def speech()
+    puts "At that moment, the light dimmed and the audience turned their eyes toward the top"
+    puts "of the staircase, where Mr.Cooper was standing with a raised glass."
+    puts "\"Good evening, ladies and gentlemen, and welcome to my home. Please enjoy your time here,"
+    puts "and be sure to stay wary of unwanted outcomes.\""
+    puts "He then finished his glass"
+  end
+
+  def enter()
+    puts "\"How about these parties?\" The voice came from your left. Before you is a"
+    puts "woman in a red dress, holding a glass of champagne and sparkling with jewelery."
+    puts "How do you respond?"
+    puts "a) There's nothing wrong with a free drink and good company."
+    puts "b) If Mr. Cooper wasn't my boss, I wouldn't be here."
+    puts "c) I can't stand these things. I'm about to get out of here."
+    print "> "
+
+    response1 = $stdin.gets.chomp
+
+    if response1 == 'a'
+      puts "The woman looks at you, and replies \"That's a good point, and Mr. Cooper doesn't skimp on the refreshments."
+      speech()
+      return 'study'
+
+    elsif response1 == 'b'
+      puts "The woman looks at you inquisitively, then turns her gaze to the staircase where Mr. Cooper had appeared."
+      speech()
+
+    elsif response1 == 'c'
+      puts "The woman smiles, and replies \"Stay awhile, and enjoy the amusements.\""
+      puts "I'm sure that you will find yourself quite entertained."
+      speech()
+
+    else
+      puts "You must choose \"a\", \"b\", or \"c\"."
+      return 'great_room'
+    end
+  end
+end
+
 class Hallway < Scene
   def enter()
-    puts "Text here."
+    puts "text here"
   end
 end
 
 class Study < Scene
   def enter()
-    puts "Text here"
+    puts "Text here."
+    return 'death'
   end
 end
 
@@ -79,6 +121,7 @@ end
 
 class Map
   @@scenes = {
+    'great_room' => GreatRoom.new(),
     'hallway' => Hallway.new(),
     'study' => Study.new(),
     'game_room' => GameRoom.new(),
@@ -101,3 +144,7 @@ class Map
     return next_scene(@start_scene)
   end
 end
+
+a_map = Map.new('great_room')
+a_game = Engine.new(a_map)
+a_game.play()
