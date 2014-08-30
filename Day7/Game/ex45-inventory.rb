@@ -1,5 +1,7 @@
 # Sheet for inventory
 
+bag = []
+
 class Inventory
   def use()
     puts "This object is not yet defined. Select an item to access use()."
@@ -9,7 +11,12 @@ end
 class Notepad < Inventory
   def use()
     puts "text here"
-    # action here
+
+    if response == "take notepad"
+      bag.push('notepad')
+    else
+      puts "test"
+    end  
   end
 end
 

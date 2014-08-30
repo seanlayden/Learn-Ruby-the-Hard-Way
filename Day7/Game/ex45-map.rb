@@ -84,8 +84,15 @@ end
 
 class Study < Scene
   def enter()
-    puts "Text here."
-    return 'death'
+    puts "Following the speech, you follow Ms. Scarlet into the study for another glass of whiskey."
+    puts "There is a fire burning steadily, casting light onto a vast collection of books. In front of the fire"
+    puts "stand two leather chairs, with a small table situated in between them. On the table is a bottle of whiskey"
+    puts "and a notepad."
+    print "> "
+
+    @@response2 = $stdin.gets.chomp
+
+    return 'study'
   end
 end
 
