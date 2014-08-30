@@ -45,3 +45,5 @@ son.altered()
 # 1. Avoid something called "meta-programming" at all costs, as it is too complex to use reliably.
 # 2. Use composition to package up code into modules that are used in many unrelated places and situations.
 # 3. Use inheritance only when there are clearly related reusable pieces of code that fit under a single common concept or if you have to.
+# Learned something new! The double-colon "::" allows for access to global variable from within another operation.
+# :: count = 1 -> Sets global count to 1.
