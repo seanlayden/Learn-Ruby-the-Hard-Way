@@ -27,11 +27,38 @@ class MagnifyingGlass < Inventory
   end
 end
 
-class Gun < Inventory
+class Knife < Inventory
   def use()
     puts "Text here."
     # action here
   end
 end
 
-class
+class Rope < Inventory
+  def use()
+    puts "Text here."
+    # action here
+  end
+end
+
+class Lockpick < Inventory
+  def use()
+    puts "Text here."
+    # action here
+  end
+end
+
+class Backpack
+  @@items = {
+    'notepad' => Notepad.new(),
+    'flashlight' => Flashlight.new(),
+    'magnifying_glass' => MagnifyingGlass.new(),
+    'knife' => Knife.new(),
+    'rope' => Rope.new(),
+    'lockpick' => Lockpick.new()
+  }
+
+  def initialize(take_item)
+    @take_item = take_item
+  end
+end

@@ -1,0 +1,6 @@
+Make a game with a map, an inventory, and a way to use all of the listed items.
+
+NOTES:
+
+- Contain rooms within a class of map.
+- Contain items within a class of inventory.
