@@ -13,7 +13,7 @@ class Engine
   end
 
   def play()
-    current_scene = @scene_map.opening_scene
+    current_scene = @scene_map.opening_scene()
     loop do
       next_scene_name = current_scene.enter()
       current_scene = @scene_map.next_scene(next_scene_name)
@@ -128,7 +128,8 @@ class Map
     'kitchen' => Kitchen.new(),
     'master_bedroom' => MasterBedroom.new(),
     'bathroom' => Bathroom.new(),
-    'dining_room' => DiningRoom.new()
+    'dining_room' => DiningRoom.new(),
+    'death' => Death.new()
   }
 
   def initialize(start_scene)
